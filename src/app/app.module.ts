@@ -10,11 +10,13 @@ import { AppComponent } from './app.component';
 
 import { PostsComponent } from './posts/posts.component';
 import { PostsService } from './posts/posts.service';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
