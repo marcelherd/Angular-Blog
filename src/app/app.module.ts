@@ -1,20 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+import { AppRoutingModule } from './modules/app-routing.module';
+import { AppMemoryModule } from './modules/app-memory.module';
 
 import { AppComponent } from './app.component';
 
-import { AppRoutingModule } from './app-routing.module';
+import { PostsComponent } from './posts/posts.component';
+import { PostsService } from './posts/posts.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PostsComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule,
+    AppRoutingModule,
+    AppMemoryModule
   ],
-  providers: [],
+  providers: [
+    PostsService
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
