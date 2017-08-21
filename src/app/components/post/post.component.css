@@ -1,0 +1,9 @@
+.post-body {
+  width: 60%;
+  line-height: 1.58;
+  font-size: 1.2em;
+  letter-spacing: -.003em;
+  word-wrap: break-word;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}

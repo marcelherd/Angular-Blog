@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Post } from '../../model/Post';
+import { PostsService } from '../posts/posts.service';
+
 @Component({
   selector: 'app-create-post',
   templateUrl: './create-post.component.html',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatePostComponent implements OnInit {
 
-  constructor() { }
+  protected post: Post;
+
+  constructor(private postsService: PostsService) { }
 
   ngOnInit() {
+    this.post = new Post();
   }
 
 }

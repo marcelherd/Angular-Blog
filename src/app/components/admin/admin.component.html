@@ -1,12 +1,21 @@
-<a [routerLink]="['/posts/new']"><i class="fa fa-plus" aria-hidden="true"></i> Create new</a>
+<a [routerLink]="['/posts/new']" class="waves-effect waves-light btn indigo lighten-1"><i class="material-icons left">create</i>new</a>
 
-<table>
+
+<table class="bordered striped highlight">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
   <tbody>
     <tr *ngFor="let post of posts">
-      <td>{{ post?.title }}</td>
       <td>
-        <a [routerLink]="['/post', post.id, 'edit']"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-        <a [routerLink]="['/post', post.id, 'delete']"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+        <a [routerLink]="['/post', post.id]" class="black-text">{{ post.title }}</a>
+      </td>
+      <td class="no-padding">
+        <a [routerLink]="['/post', post.id, 'edit']" class="waves-effect waves-light btn indigo lighten-1">edit</a>
+        <a [routerLink]="['/post', post.id, 'delete']"class="waves-effect waves-light btn red">delete</a>
       </td>
     </tr>
   </tbody>
