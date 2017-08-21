@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 
 import 'rxjs/add/operator/switchMap';
 
-import { Post } from '../model/Post';
+import { Post } from '../../model/Post';
 import { PostsService } from '../posts/posts.service';
 
 @Component({
