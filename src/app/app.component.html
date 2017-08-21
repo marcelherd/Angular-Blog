@@ -1,5 +1,47 @@
-<h1><a [routerLink]="['/']">Marcel Herd</a></h1>
+<header>
+  <nav class="indigo">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a [routerLink]="['/']" class="brand-logo center">Marcel Herd</a>
+      </div>
+    </div>
+  </nav>
+</header>
 
-<router-outlet></router-outlet>
+<main>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</main>
 
-<a [routerLink]="['/administration']">Administration</a>
+<footer class="page-footer indigo darken-1">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">About me</h5>
+        <p class="grey-text text-lighten-4">
+          Spicy jalapeno bacon ipsum dolor amet pork jowl pork loin, biltong ham hock chuck swine drumstick venison.
+          Doner meatball tongue, meatloaf cow ham shankle beef ribs. Doner pastrami jowl bacon.
+          Beef ribs meatball biltong tongue pork chop strip steak meatloaf andouille frankfurter cupim tenderloin short loin hamburger pork loin.
+          Jerky fatback short ribs, ham porchetta pork bresaola corned beef turducken kielbasa tongue tail shankle pork loin spare ribs.
+          Swine ball tip flank tenderloin venison, beef ribs corned beef meatball.
+        </p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/marcelherd/">Github</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://twitter.com/marcelherd">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2017 - Marcel Herd
+      <a [routerLink]="['/administration']" class="grey-text text-lighten-4 right">Administration</a>
+    </div>
+  </div>
+</footer>
+
+

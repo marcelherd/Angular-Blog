@@ -15,6 +15,7 @@ import { PostComponent } from './components/post/post.component';
 import { CreatePostComponent } from './components/create-post/create-post.component';
 import { EditPostComponent } from './components/edit-post/edit-post.component';
 import { DeletePostComponent } from './components/delete-post/delete-post.component';
+import { PreviewPipe } from './pipes/preview/preview.pipe';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { DeletePostComponent } from './components/delete-post/delete-post.compon
     CreatePostComponent,
     EditPostComponent,
     DeletePostComponent,
+    PreviewPipe,
   ],
   imports: [
     BrowserModule,

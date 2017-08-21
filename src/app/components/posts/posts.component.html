@@ -1,6 +1,13 @@
-<ul>
-  <li *ngFor="let post of posts">
-    <a [routerLink]="['/post', post.id]">{{ post.title }}</a>
-    <p>{{ post.body }}</p>
-  </li>
-</ul>
+<div *ngFor="let post of posts" class="row">
+  <div class="col s12 m6">
+    <div class="card blue accent-3">
+      <div class="card-content white-text">
+        <span class="card-title">{{ post?.title }}</span>
+        <p>{{ post?.body | preview: 200 }}</p>
+      </div>
+      <div class="card-action">
+        <a [routerLink]="['/post', post.id]" class="grey-text text-lighten-2">&raquo; Read more</a>
+      </div>
+    </div>
+  </div>
+</div>
