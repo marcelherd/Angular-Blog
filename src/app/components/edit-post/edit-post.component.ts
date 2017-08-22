@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 import 'rxjs/add/operator/switchMap';
@@ -19,6 +19,7 @@ export class EditPostComponent implements OnInit {
   constructor(
     private postsService: PostsService,
     private route: ActivatedRoute,
+    private router: Router,
     private location: Location
   ) { }
 
@@ -26,6 +27,15 @@ export class EditPostComponent implements OnInit {
     this.route.paramMap
       .switchMap((params: ParamMap) => this.postsService.one(+params.get('id')))
       .subscribe(post => this.post = post);
+  }
+
+  back() {
+    this.location.back();
+  }
+
+  save() {
+    this.postsService.update(this.post)
+      .then(post => this.router.navigate(['/post', post.id]));
   }
 
 }

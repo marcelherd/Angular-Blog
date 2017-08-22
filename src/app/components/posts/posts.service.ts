@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -9,6 +9,7 @@ import { Post } from '../../model/Post';
 export class PostsService {
 
   private postsUrl = 'api/posts';
+  private headers = new Headers({ 'Content-Type': 'application/json' });
 
   constructor(private http: Http) { }
 
@@ -25,6 +26,32 @@ export class PostsService {
     return this.http.get(url)
       .toPromise()
       .then(response => response.json().data as Post)
+      .catch(this.handleError);
+  }
+
+  save(post: Post): Promise<Post> {
+    return this.http
+      .post(this.postsUrl, JSON.stringify({ title: post.title, body: post.body }), { headers: this.headers })
+      .toPromise()
+      .then(res => res.json().data as Post)
+      .catch(this.handleError);
+  }
+
+  update(post: Post): Promise<Post> {
+    const url = `${this.postsUrl}/${post.id}`;
+
+    return this.http
+      .put(url, JSON.stringify(post), { headers: this.headers })
+      .toPromise()
+      .then(() => post)
+      .catch(this.handleError);
+  }
+
+  delete(post: Post): Promise<void> {
+    const url = `${this.postsUrl}/${post.id}`;
+    return this.http.delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
       .catch(this.handleError);
   }
 

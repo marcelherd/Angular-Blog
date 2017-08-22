@@ -1,4 +1,4 @@
-<a [routerLink]="['/posts/new']" class="waves-effect waves-light btn indigo lighten-1"><i class="material-icons left">create</i>new</a>
+<a [routerLink]="['/posts/new']" class="waves-effect waves-light btn indigo lighten-1"><i class="material-icons left">add</i>new</a>
 
 
 <table class="bordered striped highlight">
@@ -14,8 +14,8 @@
         <a [routerLink]="['/post', post.id]" class="black-text">{{ post.title }}</a>
       </td>
       <td class="no-padding">
-        <a [routerLink]="['/post', post.id, 'edit']" class="waves-effect waves-light btn indigo lighten-1">edit</a>
-        <a [routerLink]="['/post', post.id, 'delete']"class="waves-effect waves-light btn red">delete</a>
+        <a [routerLink]="['/post', post.id, 'edit']" class="waves-effect waves-light btn indigo lighten-1"><i class="material-icons left">edit</i>edit</a>
+        <a [routerLink]="['/post', post.id, 'delete']"class="waves-effect waves-light btn red"><i class="material-icons left">delete</i>delete</a>
       </td>
     </tr>
   </tbody>

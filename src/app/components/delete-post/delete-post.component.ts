@@ -28,4 +28,13 @@ export class DeletePostComponent implements OnInit {
       .subscribe(post => this.post = post);
   }
 
+  back() {
+    this.location.back();
+  }
+
+  delete() {
+    this.postsService.delete(this.post)
+      .then(() => this.location.back());
+  }
+
 }

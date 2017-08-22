@@ -1,6 +1,6 @@
 <h3>Really delete this post?</h3>
 
-<form class="col s12">
+<form class="col s12" (submit)="delete()">
   <div class="row">
     <div class="input-field col s6">
       <input disabled placeholder="Title" id="inputTitle" type="text" class="validate" value="{{ post.title }}">
@@ -8,10 +8,10 @@
   </div>
   <div class="row">
     <div class="input-field col s12">
-      <textarea  disabled id="textarea1" class="materialize-textarea">{{ post.body }}</textarea>
+      <textarea  disabled id="inputBody" class="materialize-textarea">{{ post.body }}</textarea>
     </div>
   </div>
-  <a [routerLink]="['/administration']" class="btn waves-effect waves-light indigo">Cancel
+  <a (click)="back()" class="btn waves-effect waves-light indigo">Cancel
     <i class="material-icons left">cancel</i>
   </a>
   <button class="btn waves-effect waves-light red" type="submit" name="action">Delete
